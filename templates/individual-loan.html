@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<a href="/" class="image left"><img src="https://images.ctfassets.net/orqped9h4wgz/702AZCEQGGZEMOpl4ZuxPk/1191d60014a9cd07f94ec9721782e6e5/lendingclubLogo.svg" height ="27" style="position:relative; left:20px; top: 12px; alt=""/></a>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header">
+
+			
+
+				<!-- Nav -->
+					<nav id="nav" style="color="#82cde5">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/#team">About us</a></li>
+							<li><a href="/individual-loan">Check your eligibility</a></li>
+							<li><a href="#footer">Contact Us</a></li>
+							<li><a href="/more-information">More Information</a></li>
+						</ul>
+					</nav>
+
+			</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-6  col-10-narrower imp-narrower">
+								<div id="content">
+
+									<!-- Content -->
+
+										<article>
+											<header>
+												<h2>Check your eligibility</h2>
+											</header>
+											<h3>Individual Loan Analysis</h3>
+											<form action="/Individual" method="POST">
+												<div>
+													<label for="zip_code">US Zip Code:</label>
+													<input type="text" id="code" name="zip_code"><p></p>
+												</div>
+
+												<div>
+													<label for="emp_title">Employment Title:</label>
+													<input type="text" id="emp_title" name="emp_title" width="10px"><p></p>
+												</div>
+
+												<div>
+													<label for="emp_length">How long have you been in your current position? (years)</label>
+													<input type="number" min="0" id="emp_length" name="emp_length"><span> years</span><br><br>
+												</div>
+
+												<div>
+													<label for="annual_inc">Annual Income</label>
+													<input type="text" id="annual_inc" name="annual_inc"><span> USD</span><br><br>
+												</div>
+										
+												<div>
+													<label for="fico_avg_score">What is your average FICO score?</label>
+													<input type="number" min="0" id="fico_avg_score" name="fico_avg_score"><br><br>
+												</div>
+
+												<div>
+													<label for="dti">What is your average Debt to Income ratio?</label>
+													<input type="text" id="dti" name="dti"><br><br>
+												</div>
+
+												<div>
+													<label for="open_acc">How many open credit accounts do you have?</label>
+													<input type="number" min="0" id="open_acc" name="open_acc"><br><br>
+												</div>
+
+												
+												<div>
+													<label for="total_acc">How many credit accounts do you have in total?</label>
+													<input type="number" min="0" id="total_acc" name="total_acc"><br><br>
+												</div>
+
+												<div>
+													<label for="mort_acc">How many mortgage accounts do you have?</label>
+													<input type="number" min="0" id="mort_acc" name="mort_acc"><br><br>
+												</div>
+
+												<div>
+													<label for="earliest_cr_line">What is our earliest credit line?</label>
+													<input type="date" id="earliest_cr_line" name="earliest_cr_line"><br><br>
+												</div>
+
+												<div>
+													<label for="revol_util">What is your utilization percentage on your credit accounts?</label>
+													<input type="text" id="revol_util" name="revol_util"><span> %</span><br><br>
+												</div>
+
+												<div>
+													<label for="revol_bal">How much of a balance do you usually carry on your credit accounts?</label>
+													<input type="text" id="revol_bal" name="revol_bal"><span> USD</span><br><br>
+												</div>
+
+												<div>
+													<label for="home_ownership">What is your home ownership status?</label>
+                          <select id="home_ownership" name="home_ownership" style="height: 10px; padding-left: 10px; padding-right: 10px;">
+														<option value="RENT">Rent</option>
+														<option value="MORTGAGE">Mortgage</option>
+														<option value="OWN">Own</option>
+														<option value="OTHER">Other</option>
+													</select><br><br>
+												</div>
+
+												<div>
+													<label for="purpose">What is the purpose of your loan application?</label>
+													<select id="purpose" name="purpose" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
+														<option value="DEBT_CONSO">Debt Consolidation</option>
+														<option value="SMALL_BUSINESS">Small Business</option>
+														<option value="HOME_IMPROVEMENT">Home Improvement</option>
+														<option value="MAJOR_PURCHASE">Major Purchase</option>
+														<option value="CREDIT_CARD">Credit Card</option>
+														<option value="VACATION">Vacation</option>
+														<option value="CAR">Car Mortgage</option>
+														<option value="MEDICAL">Medical</option>
+														<option value="MOVING">Moving</option>
+														<option value="RENEWABLE_ENERGY">Renewable Energy</option>
+														<option value="WEDDING">Wedding</option>
+														<option value="EDUCATION">Education</option>
+														<option value="OTHER_PURPOSE">Other</option>
+													</select><br><br>
+												</div>
+
+												<div>
+													<label for="pub_rec">How many public records do you have? (Leave 0 for none)</label>
+													<input type="number" min="0" id="pub_rec" name="pub_rec"><br><br>
+												</div>
+
+												<div>
+													<label for="pub_rec_bankruptcies">How many bankruptcy public records do you have? (Leave 0 for none)</label>
+													<input type="number" min="0" id="pub_rec_bankruptcies" name="pub_rec_bankruptcies"><br><br>
+												</div>
+
+												<div>
+													<label for="loan_amnt">Your Intended Loan Amount:</label>
+													<input type="text" id="loan_amnt" name="loan_amnt"><span> USD</span><br><br>
+												</div>
+
+												<div>
+													<label for="int_rate">What is the interest rate on the loan?</label>
+													<input type="text" id="int_rate" name="int_rate"><span> %</span><br><br>
+												</div>
+
+												<div>
+													<label for="term">Loan Term:</label> <select id="term" name="term" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
+														<option value="36">36 months</option>
+														<option value="60">60 months</option>
+													</select><br></br>
+												</div>
+
+												<div>
+													<label for="installment">Number of installments on the loan:</label>
+													<input type="number" min="0" id="installment" name="installment"><br><br>
+												</div>
+										
+												<div>
+													<label for="verification_status">Verification Status:</label>
+													<select id="verification_status" name="verification_status" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
+														<option value="Verified">Verified</option>
+														<option value="Not Verified">Not Verified</option>
+                            <option value="Source Verified">Source Verified</option>
+													</select><br><br>
+												</div>
+
+										
+												<input type="submit" style="background-color: #ea4224;" value="Submit">
+											</form>
+										</article>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="col-3 col-6-narrower col-12-mobilep">
+							<h3>WHAT WE OFFER</h3>
+							<ul class="links">
+								<li><a href="https://www.lendingclub.com/personal-loan">Personal Loan</a></li>
+								<li><a href="https://www.lendingclub.com/personal-deposits">Personal Banking</a></li>
+								<li><a href="https://www.lendingclub.com/auto-refinancing">Auto Refinancing</a></li>
+								<li><a href="https://www.lendingclub.com/patient-solutions">Patient Solutions</a></li>
+								<li><a href="https://www.lendingclub.com/business-loan">Business Loans</a></li>
+								<li><a href="https://www.lendingclub.com/business-deposits">Business Banking</a></li>
+								<li><a href="https://www.lendingclub.com/personal-loan/loan-types">Other types of loans</a></li>
+							</ul>
+						</section>
+						<section class="col-3 col-6-narrower col-12-mobilep">
+							<h3>ABOUT US</h3>
+							<ul class="links">
+								<li><a href="https://www.lendingclub.com/company/cra-file">CRA Public File</a></li>
+								<li><a href="https://www.lendingclub.com/company/about-us">Company</a></li>
+								<li><a href="https://www.lendingclub.com/company/leadership">Leadership</a></li>
+								<li><a href="https://www.lendingclub.com/company/careers">Careers</a></li>
+								<li><a href="https://ir.lendingclub.com/governance/govdocs/default.aspx">Corporate Governance</a></li>
+								<li><a href="https://ir.lendingclub.com/home/default.aspx">Investor Relations</a></li>
+								<li><a href="https://www.lendingclub.com/company/media-center">Media Center</a></li>
+							</ul>
+						</section>
+						<section class="col-6 col-12-narrower">
+							<h3>Get In Touch</h3>
+							<form>
+								<div class="row gtr-50">
+									<div class="col-6 col-12-mobilep">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-mobilep">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" class="button alt" style="background-color: #ea4224;" value="Send Message" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+					</div>
+				</div>
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

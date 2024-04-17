@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+		<a href="/" class="image left"><img src="https://images.ctfassets.net/orqped9h4wgz/702AZCEQGGZEMOpl4ZuxPk/1191d60014a9cd07f94ec9721782e6e5/lendingclubLogo.svg" height ="27" style="position:relative; left:20px; top: 12px; alt=""/></a>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+			
+
+				<!-- Nav -->
+					<nav id="nav" style="color="#82cde5">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/#team">About Us</a></li>
+							<li><a href="/individual-loan">Check your eligibility</a></li>
+							<li><a href="#footer">Contact Us</a></li>
+							<li><a href="/more-information">More Information</a></li>
+						</ul>
+					</nav>
+
+				</div>
+
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div id="content">
+
+							<!-- Content -->
+
+								<article>
+									<span class="image featured"><img src="images/banner.jpg" alt="" /></span>
+
+									<p>This section features the process of the team developing the model.</p>
+
+									<h3>Exploratory Descriptive Analysis</h3>
+									<h4>FICO Range</h4>
+									<p>FICO score is an important measure of creditworthiness used by Lending Club in conjunction with various factors such as income, employment history, etc., to predict the likelihood of loan repayment.</p>
+										Analysis of Lending Club's loan applicant data reveals a narrow four-point spread between the high and low ends of borrowers' FICO score ranges, resulting in a consistent pattern between these features. The trend shows a heightened frequency of fully paid loans, particularly noticeable between FICO scores of 660 to 710. In contrast, charged-off loans appear less frequently, but they are not constrained to a particular credit segment and present significantly within the lower score brackets. The aggregate loan count descends with ascending FICO scores, indicating that lower FICO score customers have a higher tendency to apply for P2P loans.</p>
+										There are several factors that might explain this observed distribution. Firstly, the high frequency for FICO score between 660 and 710 aligns with the distribution of the US FICO score, of which 38% of Americans have fair or good scores, as reported by Experian. Secondly, as P2P platforms like Lending Club aim to bolster financial inclusion, they assert to identify creditworthy individuals overlooked by traditional banks due to minimal credit histories or a scarcity of lending options. Therefore, their target is prime or near prime customers. Lastly, loans provided through P2P platforms such as Lending Club attract lower FICO score consumers as they serve as a mechanism for borrowers to enhance credit scores. Particularly, consumers borrow P2P loans to refinance or consolidate their debts, aligning with the dataset in which debt-consolidation is the most common purpose of loans. As a result, they not only receive lower rates on future P2P loans, but also gain greater access to mainstream credit (Mateescu, 2015).</p>
+
+									<h4>Loan Status</h4>
+									<p>The loan status in the dataset is being classified into two categories, ‘fully paid’ and ‘charged off’ categories. Using binary classification, ‘default’, ‘charged off’ and ‘late payments’ are considered as negative, while ‘fully paid’ is considered as positive. This is in line with Lending Club’s policy.</p>
+										However, as some of the late payments could be potentially recovered at a later date, rather than using binary classification, it could be more accurate to employ multinomial predictions to take into account the different types of default so as to make a more granular prediction.</p>
+
+									<h4>Purpose of Loan</h4>
+									<p>Loan purpose is one of the major factors for probability of default, where a loan to finance a wedding will not be the same risk as a loan to start a business. The purpose with the lowest probability of being charged off will be ‘wedding’, while loans for ‘small businesses’ are most likely to be charged off. </p>
+									These findings are consistent with a study by Cowling and Mitchell (2003) stating that loans made for investment purposes are substantially more likely to default, and the probability is further magnified with small businesses due to their liquidity constraints from poor trading, less access to capital and fewer resources to manage their finances. Cader and Leatherman (2011) found that in their sample of 90,134 observations, more than 40% of the firms did not survive after 3 years. Another study by Serrano-Cinca et al. (2015) also reported that there is a statistically significant association between small business and default.</p>
+									One notable observation is that the probability of being charged off for ‘debt consolidation’ contradicts with previous research by Djurović (2017), who reported that loan applicants who specify that they would use the loans to pay off credit card balances or for debt consolidation have the lowest level of risk. This contradiction may be caused by several different factors. First of all, while the author had used a similar dataset (Lending Club), the loan data used was from 2007 to 2015, whereas the dataset used in this analysis was from 2007 to 2018, which may lead to minor differences. Then, the survival analysis approach was used in the research, where only 12 months probability of default through the cycle is used to compare the riskiness of analysed loan characteristics, leading to differences in findings. In this case, it can still be concluded that there is a certain degree of statistical correlation between debt consolidation and default risk. </p>	
+								</article>
+
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="col-3 col-6-narrower col-12-mobilep">
+							<h3>WHAT WE OFFER</h3>
+							<ul class="links">
+								<li><a href="https://www.lendingclub.com/personal-loan">Personal Loan</a></li>
+								<li><a href="https://www.lendingclub.com/personal-deposits">Personal Banking</a></li>
+								<li><a href="https://www.lendingclub.com/auto-refinancing">Auto Refinancing</a></li>
+								<li><a href="https://www.lendingclub.com/patient-solutions">Patient Solutions</a></li>
+								<li><a href="https://www.lendingclub.com/business-loan">Business Loans</a></li>
+								<li><a href="https://www.lendingclub.com/business-deposits">Business Banking</a></li>
+								<li><a href="https://www.lendingclub.com/personal-loan/loan-types">Other types of loans</a></li>
+							</ul>
+						</section>
+						<section class="col-3 col-6-narrower col-12-mobilep">
+							<h3>ABOUT US</h3>
+							<ul class="links">
+								<li><a href="https://www.lendingclub.com/company/cra-file">CRA Public File</a></li>
+								<li><a href="https://www.lendingclub.com/company/about-us">Company</a></li>
+								<li><a href="https://www.lendingclub.com/company/leadership">Leadership</a></li>
+								<li><a href="https://www.lendingclub.com/company/careers">Careers</a></li>
+								<li><a href="https://ir.lendingclub.com/governance/govdocs/default.aspx">Corporate Governance</a></li>
+								<li><a href="https://ir.lendingclub.com/home/default.aspx">Investor Relations</a></li>
+								<li><a href="https://www.lendingclub.com/company/media-center">Media Center</a></li>
+							</ul>
+						</section>
+						<section class="col-6 col-12-narrower">
+							<h3>Get In Touch</h3>
+							<form>
+								<div class="row gtr-50">
+									<div class="col-6 col-12-mobilep">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-mobilep">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" class="button alt" style="background-color: #ea4224;" value="Send Message" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+					</div>
+				</div>
+			
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+						</ul>
+			
+						<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; All rights reserved 2024. Project by MSc Data Science and MSc FinTech students from University of West England, Bristol. </li>
+							</ul>
+						</div>
+			
+					</div>
+
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

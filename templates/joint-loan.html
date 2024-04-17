@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lending Club Loan Analysis</title>
+</head>
+<body>
+    <h1>Lending Club Loan Analysis</h1>
+    <h2>Joint Loan Analysis</h2>
+    <form action="/Joint" method="POST">
+
+        <div>
+          <label for="zip_code">US Zip Code</label>
+          <input type="text" name="zip_code">
+        </div>
+
+        <div>
+          <label for="emp_title">Employment Title</label>
+          <input type="text" name="emp_title">
+        </div>
+
+        <div>
+          <label for="emp_length">How long have you been in your current position?</label>
+          <input type="number" name="emp_length">
+        </div>
+
+        <div>
+          <label for="annual_inc">Your Annual Income</label>
+          <input type="text"  name="annual_inc">
+        </div>
+
+        <div>
+          <label for="fico_avg_score">What is your average FICO score?</label>
+          <input type="number" name="fico_avg_score">
+        </div>
+
+        <div>
+          <label for="dti">What is your Debt to Income Ratio?</label>
+          <input type="text" name="dti">
+        </div>
+        </div>
+
+        <div>
+          <label for="open_acc">How many open credit accounts do you have?</label>
+          <input type="number" name="open_acc">
+        </div>
+
+        <div>
+          <label for="total_acc">How many credit accounts do you have in total?</label>
+          <input type="number" name="total_acc">
+        </div>
+
+        <div>
+          <label for="mort_acc">How many mortgage accounts do you have?</label>
+          <input type="number" name="mort_acc">
+        </div>
+
+        <div>
+          <label for="earliest_cr_line">When was your earliest credit line?</label>
+          <input type="date" name="earliest_cr_line">
+        </div>
+
+        <div>
+          <label for="revol_util">What is your utilization percentage on your credit accounts?
+            <input type="text"  name="revol_util">
+          </label>
+        </div>
+
+        <div>
+          <label for="revol_bal">How much of a balance do you usually carry on your credit accounts?</label>
+          <input type="text"  name="revol_bal">
+        </div>
+
+        <div>
+          <label for="home_ownership">What is your home ownership status?</label>
+          <select name="home_ownership">
+            <option value="MORTGAGE">Mortgage</option>
+            <option value="RENT">Rent</option>
+            <option value="OWN">Own</option>
+            <option value="ANY">Any</option>
+            <option value="OTHER">Other</option>
+            <option value="NONE">None</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="purpose">What is your purpose of your loan application</label>
+          <select name="purpose">
+            <option value="debt_consolidation">Debt Consolidation</option>
+            <option value="small_business">Small Business</option>
+            <option value="home_improvement">Home Improvement</option>
+            <option value="major_purchase">Major Purchase</option>
+            <option value="credit_card">Credit Card</option>
+            <option value="house">House</option>
+            <option value="vacation">Vacation</option>
+            <option value="car">Car</option>
+            <option value="medical">Medical</option>
+            <option value="moving">Moving</option>
+            <option value="renewable_energy">Renewable Energy</option>
+            <option value="wedding">Wedding</option>
+            <option value="educational">Educational</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="pub_rec">How many public records do you have? (Leave 0 for none)</label>
+          <input type="number" name="pub_rec" value="0">
+        </div>
+
+        <div>
+          <label for="pub_rec_bankruptcies">How many bankruptcy public records do you have? (Leave 0 for none)</label>
+          <input type="number" name="pub_rec_bankruptcies" value="0">
+        </div>
+        </div>
+
+        <div>
+          <label for="loan_amnt">Your Intended Loan Amount</label>
+          <input type="text"  name="loan_amnt">
+        </div>
+
+        <div>
+          <label for="int_rate">What is the interest rate on the loan?</label>
+          <input type="text"  name="int_rate">
+        </div>
+
+        <div>
+          <label for="term">Loan Term</label>
+          <select name="term">
+            <option value="36 months">36 months</option>
+            <option value="60 months">60 months</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="installment">How many installments on your loan?</label>
+          <input type="number" name="installment">
+        </div>
+
+        <div>
+          <label for="verification_status">Verification Status</label>
+          <select name="verification_status">
+            <option value="Verified">Verified</option>
+            <option value="Source Verified">Source Verified</option>
+            <option value="Not Verified">Not Verified</option>
+          </select>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
