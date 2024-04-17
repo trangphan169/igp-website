@@ -1,6 +1,7 @@
 blinker==1.7.0
 click==8.1.7
-Flask==3.0.2
+Flask
+Gunicorn
 gunicorn==22.0.0
 imbalanced-learn==0.12.2
 imblearn==0.0
