@@ -3,14 +3,12 @@ import flask
 import pickle
 import pandas as pd
 import numpy as np
+from flask import url_for
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.impute import SimpleImputer
 
 # Initialize Flask app
 app = flask.Flask(__name__, template_folder="templates")
-
-def root_dir():  # pragma: no cover
-    return os.path.abspath(os.path.dirname(__file__))
 
 # Load models and data
 MODELS = {}
@@ -18,24 +16,21 @@ DATA = {}
 
 
 def load_models_and_data():
-    global MODELS, DATA
-    
-    root_dir = root_dir()
 
-    with open(root_dir + "Models/xgb_cv_final.pkl", "rb") as f:
+    with open("Models/xgb_cv_final.pkl", "rb") as f:
         MODELS["clf_individual"] = pickle.load(f)
 
-    with open(root_dir + "Models/gb_cv_compact_joint.pkl", "rb") as f:
+    with open("Models/gb_cv_compact_joint.pkl", "rb") as f:
         MODELS["clf_joint"] = pickle.load(f)
 
-    with open(root_dir + "Models/knn_regression.pkl", "rb") as f:
+    with open("Models/knn_regression.pkl", "rb") as f:
         MODELS["knn"] = pickle.load(f)
 
     DATA["df_macro_mean"] = pd.read_csv(
-        root_dir + "Data/df_macro_mean.csv", index_col=0, dtype=np.float64
+        "Data/df_macro_mean.csv", index_col=0, dtype=np.float64
     )
     DATA["df_macro_std"] = pd.read_csv(
-        root_dir + "Data/df_macro_std.csv", index_col=0, dtype=np.float64
+        "Data/df_macro_std.csv", index_col=0, dtype=np.float64
     )
 
 
