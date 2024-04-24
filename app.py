@@ -249,96 +249,20 @@ def individual():
 
     # Check debt-to-income and revolving utilization conditions
     if (
-        dti > 50
+        dti > 0.5
         or fico_avg_score < 400
         or revol_util >= 75
         or pub_rec_bankruptcies > 2
         or pub_rec > 5
         or verification_status == "Not Verified"
     ):
-        res = "Loan Denied"
+        res = False
     else:
         # Make prediction
         pred = MODELS["clf_individual"].predict(df_scaled.reshape(1, -1))[0]
-        res = "Congratulations! Approved!" if pred == 0 else "Loan Denied"
+        res = True if pred == 0 else False
 
     return flask.render_template("result.html", result=res)
-
-
-@app.route("/Joint", methods=["GET", "POST"])
-def joint():
-    # input_data = flask.request.form.to_dict()
-
-    # # Extract features from input
-    # zip_code = input_data["zip_code"]
-    # emp_length = float(input_data["emp_length"])
-    # emp_title = input_data["emp_title"]
-    # annual_inc = float(input_data["annual_inc"])
-    # fico_avg_score = float(input_data["fico_avg_score"])
-    # dti = float(input_data["dti"])
-    # earliest_cr_line = input_data["earliest_cr_line"]
-    # open_acc = float(input_data["open_acc"])
-    # total_acc = float(input_data["total_acc"])
-    # revol_util = float(input_data["revol_util"])
-    # revol_bal = float(input_data["revol_bal"])
-    # mort_acc = float(input_data["mort_acc"])
-    # home_ownership = input_data["home_ownership"]
-    # purpose = input_data["purpose"]
-    # pub_rec = float(input_data["pub_rec"])
-    # pub_rec_bankruptcies = float(input_data["pub_rec_bankruptcies"])
-    # loan_amnt = float(input_data["loan_amnt"])
-    # int_rate = float(input_data["int_rate"])
-    # term = input_data["term"]
-    # installment = float(input_data["installment"])
-    # verification_status = input_data["verification_status"]
-
-    # # Predict sub-grade
-    # sub_grade = get_sub_grade([[fico_avg_score]])
-    # grade = round(sub_grade / 5) + 1
-
-    # # Define input
-    # df_input = pd.DataFrame(
-    #     {
-    #         "loan_amnt": [loan_amnt],
-    #         "term": [term],
-    #         "int_rate": [int_rate],
-    #         "installment": [installment],
-    #         "grade": [grade],
-    #         "sub_grade": [sub_grade],
-    #         "emp_title": [emp_title],
-    #         "emp_length": [emp_length],
-    #         "home_ownership": [home_ownership],
-    #         "annual_inc": [annual_inc],
-    #         "verification_status": [verification_status],
-    #         "purpose": [purpose],
-    #         "dti": [dti],
-    #         "earliest_cr_line": [earliest_cr_line],
-    #         "open_acc": [open_acc],
-    #         "total_acc": [total_acc],
-    #         "revol_bal": [revol_bal],
-    #         "revol_util": [revol_util],
-    #         "pub_rec": [pub_rec],
-    #         "pub_rec_bankruptcies": [pub_rec_bankruptcies],
-    #         "mort_acc": [mort_acc],
-    #         "zip_code": [zip_code],
-    #         "fico_avg_score": [fico_avg_score],
-    #     }
-    # )
-
-    # # Preprocess input
-    # df_processed = preprocess_input(df_input)
-
-    # # # Scale input
-    # df_scaled = cust_scaler(df_processed).values
-
-    # # Check debt-to-income and revolving utilization conditions
-    # # Make prediction
-    # pred = MODELS["clf_joint"].predict(df_scaled.reshape(1, -1))[0]
-    # res = "Congratulations! Approved!" if pred == 0 else "Loan Denied"
-
-    # return flask.render_template("result.html", result=res)
-    pass
-
 
 # if __name__ == "__main__":
 #     app.run()
