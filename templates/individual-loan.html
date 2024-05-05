@@ -41,9 +41,10 @@
 												<h2>Check your eligibility</h2>
 											</header>
 											<h3>Individual Loan Analysis</h3>
-											<form action="/Individual" method="POST">
-												<div>
+											<form action="/Individual" method="POST" style='display: flex; flex-direction: column;'>
+												<div class='tooltip'>
 													<label for="zip_code">US Zip Code:</label>
+													<span class="tooltiptext">Enter your US zipcode here.</span>
 													<input type="text" id="code" name="zip_code"><p></p>
 												</div>
 
@@ -58,29 +59,26 @@
 												</div>
 
 												<div>
-													<label for="annual_inc">Annual Income</label>
+													<label for="annual_inc">Annual Income:</label>
 													<input type="text" id="annual_inc" name="annual_inc"><span> USD</span><br><br>
 												</div>
-										
+												
 												<div>
+													<label for="debt">What are your total debts amount to?</label>
+													<input type="text" id="debt" name="debt"><span> USD</span><br><br>
+												</div>
+										
+												<div class='tooltip'>
 													<label for="fico_avg_score">What is your average FICO score?</label>
+													<span class="tooltiptext">Your credit score, ranging from 300 to 850.</span>
 													<input type="number" min="0" id="fico_avg_score" name="fico_avg_score"><br><br>
 												</div>
 
-												<div>
-													<label for="dti">What is your average Debt to Income ratio?</label>
-													<input type="text" id="dti" name="dti"><br><br>
-												</div>
 
-												<div>
+												<div class='tooltip'>
 													<label for="open_acc">How many open credit accounts do you have?</label>
+													<span class="tooltiptext">The number of open credit accounts you currently hold, including other banks.</span>
 													<input type="number" min="0" id="open_acc" name="open_acc"><br><br>
-												</div>
-
-												
-												<div>
-													<label for="total_acc">How many credit accounts do you have in total?</label>
-													<input type="number" min="0" id="total_acc" name="total_acc"><br><br>
 												</div>
 
 												<div>
@@ -88,19 +86,22 @@
 													<input type="number" min="0" id="mort_acc" name="mort_acc"><br><br>
 												</div>
 
-												<div>
+												<div class='tooltip'>
 													<label for="earliest_cr_line">What is our earliest credit line?</label>
+													<span class="tooltiptext">The earliest date you receive a loan from us or other banks.</span>
 													<input type="date" id="earliest_cr_line" name="earliest_cr_line"><br><br>
 												</div>
 
-												<div>
-													<label for="revol_util">What is your utilization percentage on your credit accounts?</label>
-													<input type="text" id="revol_util" name="revol_util"><span> %</span><br><br>
+												<div class='tooltip'>
+													<label for="revol_bal">Total revolving credit amount:</label>
+													<span class="tooltiptext">Your total approved credit limit across all your credit lines.</span>
+													<input type="text" id="revol_bal" name="revol_bal"><span> USD</span><br><br>
 												</div>
 
-												<div>
-													<label for="revol_bal">How much of a balance do you usually carry on your credit accounts?</label>
-													<input type="text" id="revol_bal" name="revol_bal"><span> USD</span><br><br>
+												<div class='tooltip'>
+													<label for="total_credit_used">Total credit used:</label>
+													<span class="tooltiptext">The total credit amount used across all your credit lines.</span>
+													<input type="text" id="total_credit_used" name="total_credit_used"><span> USD</span><br><br>
 												</div>
 
 												<div>
@@ -132,8 +133,9 @@
 													</select><br><br>
 												</div>
 
-												<div>
+												<div class='tooltip'>
 													<label for="pub_rec">How many public records do you have? (Leave 0 for none)</label>
+													<span class="tooltiptext">Public records like insolvency, electoral roll or IVA.</span>
 													<input type="number" min="0" id="pub_rec" name="pub_rec"><br><br>
 												</div>
 
@@ -147,30 +149,24 @@
 													<input type="text" id="loan_amnt" name="loan_amnt"><span> USD</span><br><br>
 												</div>
 
-												<div>
+												<div class='tooltip'>
 													<label for="int_rate">What is the interest rate on the loan?</label>
+													<span class="tooltiptext">The rate of interest on your loan, ranging from 1% to 10% depending on your credit history.</span>
 													<input type="text" id="int_rate" name="int_rate"><span> %</span><br><br>
 												</div>
 
 												<div>
-													<label for="term">Loan Term:</label> <select id="term" name="term" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
+													<label for="term">Loan Term:</label> 
+													<select id="term" name="term" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
 														<option value="36">36 months</option>
 														<option value="60">60 months</option>
 													</select><br></br>
 												</div>
 
-												<div>
+												<div class='tooltip'>
 													<label for="installment">Number of installments on the loan:</label>
+													<span class="tooltiptext">The number of payments to settle your loan's principal and interest amount.</span>
 													<input type="number" min="0" id="installment" name="installment"><br><br>
-												</div>
-										
-												<div>
-													<label for="verification_status">Verification Status:</label>
-													<select id="verification_status" name="verification_status" style="box-sizing: height: 10px; padding-left: 10px; padding-right: 10px;">
-														<option value="Verified">Verified</option>
-														<option value="Not Verified">Not Verified</option>
-                            <option value="Source Verified">Source Verified</option>
-													</select><br><br>
 												</div>
 
 										

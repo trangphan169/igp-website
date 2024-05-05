@@ -2002,7 +2002,10 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	textarea {
+	input[type="date"],
+	input[type="number"],
+	textarea,
+	select {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
@@ -2025,7 +2028,10 @@ input, select, textarea {
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
-		textarea:focus {
+		input[type="date"]:focus,
+		input[type="number"]:focus,
+		textarea:focus,
+		select:focus {
 			border-color: #37c0fb;
 		}
 
@@ -3358,3 +3364,42 @@ input, select, textarea {
 			}
 
 	}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 370px;
+	background-color: #5fc3e8;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -100px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: 5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

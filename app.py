@@ -191,11 +191,8 @@ def individual():
     emp_title = input_data["emp_title"]
     annual_inc = float(input_data["annual_inc"])
     fico_avg_score = float(input_data["fico_avg_score"])
-    dti = float(input_data["dti"])
     earliest_cr_line = input_data["earliest_cr_line"]
     open_acc = float(input_data["open_acc"])
-    total_acc = float(input_data["total_acc"])
-    revol_util = float(input_data["revol_util"])
     revol_bal = float(input_data["revol_bal"])
     mort_acc = float(input_data["mort_acc"])
     home_ownership = input_data["home_ownership"]
@@ -206,7 +203,13 @@ def individual():
     int_rate = float(input_data["int_rate"])
     term = input_data["term"]
     installment = float(input_data["installment"])
-    verification_status = input_data["verification_status"]
+    debt = float(input_data['debt'])
+    total_credit_used = float(input_data['total_credit_used'])
+    
+    verification_status = 'Verified'
+    dti = debt / annual_inc
+    revol_util = total_credit_used / revol_bal
+    total_acc = open_acc + mort_acc
 
     # Predict sub-grade
     sub_grade = get_sub_grade([[fico_avg_score]])
@@ -254,7 +257,6 @@ def individual():
         or revol_util >= 75
         or pub_rec_bankruptcies > 2
         or pub_rec > 5
-        or verification_status == "Not Verified"
     ):
         res = False
     else:
